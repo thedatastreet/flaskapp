@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <main class="hero-section">
+    <div class="container">
+      
+      <div class="section-tabs">
+        <div class="places">
+          {% for place in places %}
+            <article>
+              <a class="name" href="{{ place['url'] }}" target="_blank">{{ place['name'] }}</a>
+              <p class="walking-distance">{{ place['time'] }} min away</p>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="section-map">
+        <div class="nav">
+          <form method="POST" action="/home">
+            {{ form.hidden_tag() }}
+            
+            <div class="form-group">
+              {% if form.address.errors %}
+                {% for error in form.address.errors %}
+                  <p class="error-message">{{ error }}</p>
+                {% endfor %}
+              {% endif %}
+
+              {{ form.address(placeholder="Enter Latitude, Longitude.") }}
+            </div>
+            
+            {{ form.submit(class="btn-primary") }}
+          </form>
+        </div>
+
+      <div class="clearfix"></div>
+    </div>
+  </main>
+
+ 
+
+{% endblock %}

@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html>
+{% extends "layout.html" %}
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-<body>
-
-<h1>About Page</h1>
-<p>This is About page of our Flask app. This will have all contents about the flask application</p>
-
-</body>
-</html>
+{% block content %}
+    <main class="about-selection">
+        <div class="container">
+        
+            <h2>About Flask App</h2>
+            <p>In this Flask App, you'll build an app that let's you find new places around you. With this app you can find places you like, and discover new points of interest wherever you are.</p>
+        </div>
+    </main>
+{% endblock %}
